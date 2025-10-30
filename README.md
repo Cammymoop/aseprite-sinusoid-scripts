@@ -51,7 +51,7 @@ Creates a new layer with a sinusoid-shaped mask that shows the active area of th
 
 - The sinusoidal rotator works only on the currently active cel/layer, if it's not doing anything check your current layer
 - The sinusoidal rotator works based on the size of the entire sprite, so you should be able to have separate layers and rotate them independantly, but in this case the script will not keep track of the relative rotation of each layer so be careful with that. More functionality to keep track of individual layer rotation would be possible but there's nothing for now.
-- The width of each row in the sinusoidal mapping is calculated using the formula `sinusoid_width = sin(π * (row_y + 0.5) / height) * width`. Rows are centered in the texture image and odd rows have the extra pixel on the left.
+- The width of each row in the sinusoidal mapping is calculated using the formula `sinusoid_width = ceil(sin(π * (row_y + 0.5) / texture_height) * texture_width)`. Rows are centered in the texture image and odd rows have the extra pixel on the left.
 - Most sphere meshes have a sawtooth shaped gap in the UV space mapping because the poles are a singularity and the top and bottom faces are triangles not quads, if you have small enough faces and a low enough resolution texture any errors from that go away, but a way to avoid the problem entirely is to just use the interpolated normal direction to calculate the texture lookup. Which is what I'm doing in these screenshots.
 - For best results with hard edged pixels, you probably want a sphere-voronoi style texture sampling algorithm like the one I used in the above screenshot. This is what it looks like using a rectangular nearest neighbor style:
 
