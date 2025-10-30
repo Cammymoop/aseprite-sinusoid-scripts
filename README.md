@@ -60,3 +60,5 @@ Creates a new layer with a sinusoid-shaped mask that shows the active area of th
 Here's a noisy pixel texture on a blue planet showing more clearly where the voronoi sampling makes the pixel pattern look like honeycomb rather than a disco ball.
 
 ![Noisy blue planet](screenshots/screenshot_blue_planet.png)
+
+I found the mars surface color texture that I used to make the example mars texture in this repo from this page [Mars surface image source](https://planetpixelemporium.com/mars.html)
